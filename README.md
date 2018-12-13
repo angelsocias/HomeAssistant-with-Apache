@@ -24,7 +24,7 @@ Para ello, vamos a crear primero el archivo, con el siguiente comando:
   * ```sudo nano /etc/apache2/sites-available/homeassistant.conf```
 
 Se nos abrirá una ventana, esto es un editor de texto en terminal. Aquí pegaremos el siguiente trozo de código (Para pegarlo, si usas el cliente Putty, se hace haciendo click derecho):
-  * ```
+```
   <VirtualHost *:80>
   ProxyPreserveHost On
   ProxyRequests Off
@@ -38,7 +38,8 @@ Se nos abrirá una ventana, esto es un editor de texto en terminal. Aquí pegare
   RewriteCond %{HTTP:CONNECTION} ^Upgrade$ [NC]
   RewriteRule .* ws://localhost:8123%{REQUEST_URI} [P]
 </VirtualHost>
-  ```
+```
+
 Donde pone dominio.com, debemos cambiarlo por el dominio creado con FreeNom.
 
 Una vez pegado y cambiado el dominio, presionamos teclas Ctrl+O, Enter para guardar el archivo y luego Ctrl+X para cerrarlo.
