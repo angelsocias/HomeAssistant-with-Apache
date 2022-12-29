@@ -51,4 +51,15 @@ Ahora debemos activar el VirtualHost, se hace con el siguiente comando:
 Y reiniciamos apache2 para que haga efecto el cambio:
   * ```sudo service apache2 restart```
 
+Por último hay que configurar el bloque http de la configuración de HomeAssistant. Abrimos el archivo configuration.yml y añadimos este bloque de código
+```
+http:
+  server_port: 8123
+  base_url: https://dominio.com
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 127.0.0.1
+    - ::1
+```
+Acuérdate de cambiar dominio.com por tu dominio y de comprobar que el bloque http no existe ya en tu configuración, para no duplicarlo. 
 Si hemos realizado todos los pasos correctamente, ya deberiamos poder entrar desde nuestro dominio que hemos creado, a HomeAssistant, pudiendo usar https si hemos puesto el registro en CloudFlare con la nube en naranja.
