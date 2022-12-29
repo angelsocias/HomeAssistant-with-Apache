@@ -15,6 +15,7 @@ Una vez tenemos todo, nuestro dominio apuntando a nuestra IP desde CloudFlare, p
   * ```sudo a2enmod proxy_http```
   * ```sudo a2enmod proxy_balancer```
   * ```sudo a2enmod lbmethod_byrequests```
+  * ```sudo a2enmod rewrite```
   
 Y reiniciamos el servicio para que se apliquen los cambios.
   * ```sudo service apache2 reload```
